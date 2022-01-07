@@ -1,20 +1,9 @@
 pipeline {
-    agent none
+    agent any
     stages {
-        stage('Pipeline from Python') {
-            agent {
-               docker { image 'python:latest' }
-            }
+        stage('Hello from Sec branch') {
             steps {
-                sh 'python --version'
-            }
-        }
-        stage('Pipeline from Groovy') {
-            agent {
-               docker { image 'groovy:latest' }
-            }
-            steps {
-                sh 'groovy --version'
+                sh 'cat README.md'
             }
         }
     }
